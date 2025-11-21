@@ -1,0 +1,17 @@
+<odoo>
+    <record id="email_template_facture" model="mail.template">
+        <field name="name">Facture Client</field>
+        <field name="model_id" ref="model_gestion_facture"/>
+        <field name="subject">Votre facture {object.name}</field>
+        <field name="email_from">amine.bouabid2018@gmail.com</field>
+        <field name="email_to">{object.client_id.email}</field>
+        <field name="body_html"><![CDATA[
+            <p>Bonjour {object.client_id.name},</p>
+            <p>Voici le récapitulatif de votre facture <strong>{object.name}</strong>.</p>
+            <p>Montant total : <strong>{object.montant_total} €</strong></p>
+            <p>Date : {object.date_facture}</p>
+            <p>Veuillez payer dans 7 jours.</p>
+            <p>Merci pour votre confiance.</p>
+        ]]></field>
+    </record>
+</odoo>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vue liste -->
+    <record id="view_session_tree" model="ir.ui.view">
+        <field name="name">gestion.session.tree</field>
+        <field name="model">gestion.session</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="etat == 'terminee'" decoration-bf="etat == 'terminee'">
+                <field name="type_seance"/>
+                <field name="utilisateur_id"/>
+                <field name="client_id"/>
+                <field name="date_seance"/>
+                <field name="etat" widget="statusbar"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Vue formulaire -->
+    <record id="view_session_form" model="ir.ui.view">
+        <field name="name">gestion.session.form</field>
+        <field name="model">gestion.session</field>
+        <field name="arch" type="xml">
+            <form string="Séance">
+                <sheet>
+                    <group>
+                        <field name="type_seance"/>
+                        <field name="utilisateur_id"/>
+                        <field name="client_id"/>
+                        <field name="date_seance"/>
+                        <field name="duree"/>
+                        <field name="tarif" readonly="1"/>
+                        <field name="etat"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Recherche -->
+    <record id="view_session_search" model="ir.ui.view">
+        <field name="name">gestion.session.search</field>
+        <field name="model">gestion.session</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="type_seance"/>
+                <field name="utilisateur_id"/>
+                <field name="client_id"/>
+                <field name="date_seance"/>
+                <field name="etat"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Calendrier -->
+    <record id="view_session_calendar" model="ir.ui.view">
+        <field name="name">gestion.session.calendar</field>
+        <field name="model">gestion.session</field>
+        <field name="arch" type="xml">
+            <calendar
+                string="Agenda des séances"
+                date_start="date_seance"
+                color="etat"
+                event_open_popup="true"
+            >
+                <field name="type_seance"/>
+                <field name="utilisateur_id"/>
+                <field name="client_id"/>
+            </calendar>
+        </field>
+    </record>
+
+
+
+</odoo>

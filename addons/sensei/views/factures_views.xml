@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_facture_tree" model="ir.ui.view">
+        <field name="name">gestion.facture.tree</field>
+        <field name="model">gestion.facture</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="client_id"/>
+                <field name="date_facture"/>
+                <field name="montant_total"/>
+                <!-- Bouton unique pour prévisualiser/envoyer -->
+                <button name="action_preview_mail"
+                        string="Prévisualiser Email"
+                        type="object"
+                         class="btn-primary o_float_right"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

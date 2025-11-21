@@ -1,0 +1,9 @@
+<odoo>
+    <record id="seq_gestion_facture" model="ir.sequence">
+        <field name="name">Facture</field>
+        <field name="code">gestion.facture</field>
+        <field name="prefix">FAC</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+    </record>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestion_utilisateur,access_gestion_utilisateur,model_gestion_utilisateur,base.group_user,1,1,1,1
+access_gestion_session,access_gestion_session,model_gestion_session,base.group_user,1,1,1,1
+access_gestion_facture,access_gestion_facture,model_gestion_facture,base.group_user,1,1,1,1
+access_facture_mail_wizard_user,access.facture.mail.wizard.user,model_gestion_facture_mail_wizard,,1,1,1,1

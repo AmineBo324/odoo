@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Menu principal -->
+    <menuitem id="menu_gestion_utilisateurs" name="Sensei" sequence="10"/>
+
+    <!-- Gestion Employés -->
+    <record id="action_gestion_utilisateur" model="ir.actions.act_window">
+        <field name="name">Employés</field>
+        <field name="res_model">gestion.utilisateur</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_utilisateur_search"/>
+    </record>
+    <menuitem id="menu_utilisateurs"
+              name="Employés"
+              parent="menu_gestion_utilisateurs"
+              action="action_gestion_utilisateur"
+              sequence="10"/>
+
+    <!-- Gestion Séances -->
+    <record id="action_gestion_session" model="ir.actions.act_window">
+        <field name="name">Séances</field>
+        <field name="res_model">gestion.session</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="search_view_id" ref="view_session_search"/>
+    </record>
+    <menuitem id="menu_sessions"
+              name="Séances"
+              parent="menu_gestion_utilisateurs"
+              action="action_gestion_session"
+              sequence="20"/>
+
+    <!-- Gestion Factures -->
+    <record id="action_gestion_facture" model="ir.actions.act_window">
+        <field name="name">Factures</field>
+        <field name="res_model">gestion.facture</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_factures"
+              name="Factures"
+              parent="menu_gestion_utilisateurs"
+              action="action_gestion_facture"
+              sequence="30"/>
+
+</odoo>
